@@ -1,0 +1,24 @@
+{% for word in words %}
+    {{ word.language }} <br>
+    {% if word.masc_form %}
+        + {{ word.masc_form }}
+        {% if word.masc_meaning %}
+            / {{ word.masc_meaning }}
+        {% endif %}
+        <br>
+    {% endif %}
+    {% if word.fem_form %}
+        - {{ word.fem_form }}
+        {% if word.fem_meaning %}
+            / {{ word.fem_meaning }}
+        {% endif %}
+        <br>
+    {% endif %}
+    {% if word.neut_form %}
+        o {{ word.neut_form }}
+        {% if word.neut_meaning %}
+            / {{ word.neut_meaning }}
+        {% endif %}
+        <br>
+    {% endif %}
+{% endfor %}
