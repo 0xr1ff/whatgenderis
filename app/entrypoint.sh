@@ -17,7 +17,8 @@ fi
 # To migrate manually, run this after the container is up:
 #  docker-compose exec web python manage.py flush --no-input
 #  docker-compose exec web python manage.py migrate
-python manage.py flush --no-input
+
+# python manage.py flush --no-input
 python manage.py migrate
 
 exec "$@"

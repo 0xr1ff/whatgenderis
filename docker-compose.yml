@@ -13,11 +13,11 @@ services:
   db:
     image: postgres:16
     volumes:
-      - postgres_data:/var/lib/postgresql/data/
+      - postgres_data_dev:/var/lib/postgresql/data/
     environment:
       - POSTGRES_USER=whatgenderis
       - POSTGRES_PASSWORD=whatgenderis
       - POSTGRES_DB=whatgenderis_dev
 
 volumes:
-  postgres_data:
+  postgres_data_dev:
