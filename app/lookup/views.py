@@ -14,4 +14,4 @@ def lookup(request, spelling):
         words = Spelling.objects.get(spelling=spelling).words.all()
     except Spelling.DoesNotExist:
         return HttpResponse(f"We don't know the word {spelling} :(")
-    return render(request, 'lookup/lookup.html', {'words': words})
+    return render(request, 'lookup/lookup.html', {'words': words, 'spelling': spelling.lower()})

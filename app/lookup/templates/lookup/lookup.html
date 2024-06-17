@@ -1,24 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{ spelling }} - whatgender.is</title>
+    <link href="{% static 'fontawesomefree/css/fontawesome.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'fontawesomefree/css/solid.css' %}" rel="stylesheet" type="text/css">
+</head>
+<body>
 {% for word in words %}
     {{ word.language }} <br>
     {% if word.masc_form %}
-        + {{ word.masc_form }}
+        <i class="fa-solid fa-circle-plus"></i>
+        {{ word.masc_form }}
         {% if word.masc_meaning %}
             / {{ word.masc_meaning }}
         {% endif %}
         <br>
     {% endif %}
     {% if word.fem_form %}
-        - {{ word.fem_form }}
+        <i class="fa-solid fa-circle-minus"></i>
+        {{ word.fem_form }}
         {% if word.fem_meaning %}
             / {{ word.fem_meaning }}
         {% endif %}
         <br>
     {% endif %}
     {% if word.neut_form %}
-        o {{ word.neut_form }}
+        <i class="fa-solid fa-circle-play"></i>
+        {{ word.neut_form }}
         {% if word.neut_meaning %}
             / {{ word.neut_meaning }}
         {% endif %}
         <br>
     {% endif %}
 {% endfor %}
+</body>
+</html>
+
